@@ -3,7 +3,7 @@
 
 """Usage:
 
-./bootstrap.py --num=32 --cmd='/usr/bin/frontik --config=/etc/hh-xhh/frontik.cfg --app=xhh --port=15{num:0>2}'
+/usr/bin/bootstrap --num=32 --cmd='/usr/bin/frontik --config=/etc/hh-xhh/frontik.cfg --app=xhh --port=15{num:0>2}'
 
 """
 
