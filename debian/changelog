@@ -1,3 +1,9 @@
+python-multiprocess-bootstrap (0.1.1) unstable; urgency=medium
+
+  * restart children automatically, add --log option
+
+ -- Andrey Sumin <an.sumin@hh.ru>  Wed, 17 May 2017 13:20:44 +0300
+
 python-multiprocess-bootstrap (0.1.0) unstable; urgency=low
 
   * Initial release
