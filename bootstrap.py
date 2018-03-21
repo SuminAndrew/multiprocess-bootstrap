@@ -22,6 +22,7 @@ def start():
     parser.add_argument('--cmd', type=str, help='Command to be executed')
     parser.add_argument('--num', type=int, help='Processes count')
     parser.add_argument('--log', type=str, help='Logfile path (uses stderr if empty)')
+    parser.add_argument('--applog', type=str, help='Logfile to which stdout and stderr of executed cmds is written')
     args = parser.parse_args()
 
     if args.log is None:
@@ -67,7 +68,17 @@ def start_process(process_num, args):
     cmd_formatted = args.cmd.format(num=process_num)
     logging.info('starting process #%s, executing "%s"', process_num, cmd_formatted)
 
-    _PROCESSES.append(subprocess.Popen(cmd_formatted.split()))
+    if args.applog is not None:
+        log_filename = '.'.join([args.applog, process_num])
+
+        kwargs = {
+            'stderr': subprocess.STDOUT,
+            'stdout': open(log_filename, 'a+')
+        }
+    else:
+        kwargs = {}
+
+    _PROCESSES.append(subprocess.Popen(cmd_formatted.split(), **kwargs))
 
 
 if __name__ == '__main__':
