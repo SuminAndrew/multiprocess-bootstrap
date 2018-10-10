@@ -1,7 +1,6 @@
 .idea/
 
 *.log
-debian/files
-debian/*.substvars
-debian/python-multiprocess-bootstrap/
-debian/tmp/
+build/
+dist/
+*.egg-info/

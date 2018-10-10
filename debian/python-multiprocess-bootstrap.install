@@ -1,2 +1,0 @@
-#!/usr/bin/dh-exec
-bootstrap.py => /usr/bin/bootstrap
